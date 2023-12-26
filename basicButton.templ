@@ -1,11 +1,13 @@
 package GUIx
 
+import "strings"
 
-
-templ BasicButton(id, label, classes ...string) {
+templ BasicButton(id, label string, classes ...string) {
 	
-	c := []string{"btn"}
-	c = append(c, classes)
-	
-	<button id={id} class={c} type="button" >{label}</button>
+	<button id={id} type="button" 
+	if len(classes) > 0 {
+		class={strings.Join(append(classes, "btn"), " ")}
+	} else {
+		class="btn"
+	} >{label}</button>
 }
