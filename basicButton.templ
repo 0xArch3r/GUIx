@@ -1,0 +1,14 @@
+package GUIx
+
+//import "github.com/0xArch3r/GUIx"
+
+
+templ BasicButton(id, label, classes ...string) {
+	
+	c := []string{"btn"}
+	c = append(c, classes)
+	//x := append(defaultClasses, classes)
+	//s := strings.Join(" ", x)
+	
+	<button id={id} class={c} type="button" >{label}</button>
+}
