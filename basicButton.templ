@@ -1,13 +1,14 @@
 package GUIx
 
-import "strings"
+import "fmt"
 
-templ BasicButton(id, label string, classes ...string) {
-	
-	<button id={id} type="button" 
-	if len(classes) > 0 {
-		class={strings.Join(append(classes, "btn"), " ")}
-	} else {
-		class="btn"
-	} >{label}</button>
+templ linkButton(id, label, classes string, link templ.SafeURL) {
+	<a href={link}>
+		<button id={id} type="button" 
+		if classes != "" {
+			class={fmt.Sprintf("btn %v", classes)}
+		} else {
+			class="btn"
+		} >{label}</button>
+	</a>
 }
