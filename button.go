@@ -13,8 +13,8 @@ const (
 )
 
 type ButtonOpts struct {
-	key   string
-	value string
+	Key   string
+	Value string
 }
 
 func LinkOpt() ButtonOpts {
@@ -53,13 +53,13 @@ func BasicButton(id, label string, opts ...ButtonOpts) templ.Component {
 		classes: []string{},
 	}
 	for _, opt := range opts {
-		switch opt.key {
+		switch opt.Key {
 		case "type":
-			params.buttonType = opt.value
+			params.buttonType = opt.Value
 		case "href":
-			params.href = opt.value
+			params.href = opt.Value
 		case "class":
-			params.classes = append(params.classes, opt.value)
+			params.classes = append(params.classes, opt.Value)
 		}
 	}
 
